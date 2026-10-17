@@ -3,6 +3,7 @@
 import {
   ArrowDown,
   ArrowUpRight,
+  Award,
   Box,
   Cloud,
   Code2,
@@ -17,8 +18,6 @@ import {
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { DigitalTwin } from "../components/digital-twin";
-
-const BASE_PATH = "/career";
 
 const expertise = [
   {
@@ -41,6 +40,33 @@ const expertise = [
     title: "Live Products",
     text: "Cloud-connected products using Unity Cloud Services, Asset Bundles, Remote Config, Firebase, analytics, and live-operations tooling.",
     tags: ["Unity Cloud", "Asset Bundles", "Firebase", "Analytics"],
+  },
+];
+
+const certifications = [
+  {
+    title: "Autodesk AutoCAD - Beginner to Advanced level",
+    provider: "Udemy",
+    instructor: "Steve Clancy",
+    date: "September 6, 2026",
+    duration: "19 hours",
+    credentialUrl: "https://ude.my/UC-1c17cc85-2144-465a-a712-226752a2ad4e",
+  },
+  {
+    title: "Programming Design Patterns For Unity: Write Better Code",
+    provider: "Udemy",
+    instructor: "GameDev.tv Team",
+    date: "March 19, 2024",
+    duration: "3.5 hours",
+    credentialUrl: "https://ude.my/UC-fbea1832-6b97-487c-aaac-284a16fe7d09",
+  },
+  {
+    title: "Unreal Engine 4 C++ The Ultimate Shooter Course",
+    provider: "Udemy",
+    instructor: "Stephen Ulibarri",
+    date: "April 3, 2024",
+    duration: "56 hours",
+    credentialUrl: "https://ude.my/UC-395a5276-c198-4fb9-acbc-953658a89a80",
   },
 ];
 
@@ -120,7 +146,7 @@ const work = [
     stat: "$1B+",
     statLabel: "annual revenue cited in profile",
     className: "work-crossfire",
-    image: `${BASE_PATH}/work/crossfire.webp`,
+    image: "/work/crossfire.webp",
     imageAlt: "CrossFire first-person shooter gameplay",
     stack: ["C++", "Gameplay Systems", "Networking", "Optimization"],
   },
@@ -133,7 +159,7 @@ const work = [
     stat: "3+ yrs",
     statLabel: "shipping live-service features",
     className: "work-konami",
-    image: `${BASE_PATH}/work/mykonami.webp`,
+    image: "/work/mykonami.webp",
     imageAlt: "myKonami Slots game lobby",
     stack: ["Unity", "C#", "Splunk", "Couchbase"],
   },
@@ -146,9 +172,9 @@ const work = [
     stat: "VR + 3D",
     statLabel: "immersive product experiences",
     className: "work-health",
-    image: `${BASE_PATH}/work/digital-surgeon.webp`,
+    image: "/work/digital-surgeon.webp",
     imageAlt: "Digital Surgeon medical training application",
-    secondaryImage: `${BASE_PATH}/work/wellness.webp`,
+    secondaryImage: "/work/wellness.webp",
     secondaryImageAlt: "Wellness game mobile experience",
     stack: ["Unity", "URP", "Timeline", "Asset Bundles"],
   },
@@ -161,7 +187,7 @@ const work = [
     stat: "360°",
     statLabel: "from code to live operations",
     className: "work-indie",
-    image: `${BASE_PATH}/work/independent-game.webp`,
+    image: "/work/independent-game.webp",
     imageAlt: "Independent tower defense game project",
     stack: ["Unity", "C#", "Analytics", "Live Ops"],
   },
@@ -305,6 +331,43 @@ export default function Home() {
               </div>
             </article>
           ))}
+        </div>
+
+        <div className="credentials">
+          <div className="credentials-heading">
+            <div>
+              <p className="eyebrow">CONTINUOUS LEARNING</p>
+              <h3>Certificates &amp; focused training.</h3>
+            </div>
+            <p>
+              Verified coursework expanding practical depth across Unity
+              architecture, Unreal C++, and technical drafting.
+            </p>
+          </div>
+          <div className="credential-grid">
+            {certifications.map((certificate, index) => (
+              <a
+                className="credential-card"
+                href={certificate.credentialUrl}
+                key={certificate.title}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <div className="credential-card-top">
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <SafeIcon icon={Award} size={24} strokeWidth={1.4} />
+                </div>
+                <span className="credential-provider">{certificate.provider} certificate</span>
+                <h4>{certificate.title}</h4>
+                <p>Instructor: {certificate.instructor}</p>
+                <div className="credential-meta">
+                  <span>{certificate.date}</span>
+                  <span>{certificate.duration}</span>
+                  <SafeIcon icon={ArrowUpRight} size={16} />
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 

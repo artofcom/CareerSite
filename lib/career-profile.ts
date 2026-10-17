@@ -60,7 +60,7 @@ Independent work:
 
 Education, certifications, and recognition:
 - Bachelor's degree in Computer Engineering from Hansung University, 1996–2003.
-- Certifications: Software Architecture Foundations; Programming Foundations: Design Patterns.
+- Certifications and completed training: Software Architecture Foundations; Programming Foundations: Design Patterns; Programming Design Patterns For Unity: Write Better Code (Udemy, March 19, 2024, 3.5 hours); Unreal Engine 4 C++ The Ultimate Shooter Course (Udemy, April 3, 2024, 56 hours); Autodesk AutoCAD - Beginner to Advanced level (Udemy, September 6, 2026, 19 hours).
 - Awards: Winner of the university subject “Experimental Project”; Smilegate Employee of the Month award.
 
 Public links:

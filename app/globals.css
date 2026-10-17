@@ -392,6 +392,28 @@ h2 em {
 .tag-list span { display: inline-flex; align-items: center; gap: 8px; padding: 9px 12px; border-radius: 5px; color: #f5f7ee; background: var(--ink); font-size: 10px; font-weight: 750; letter-spacing: .025em; }
 .tag-list span:before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--acid); box-shadow: 0 0 8px rgba(201,255,82,.55); }
 
+.credentials { margin-top: 110px; }
+.credentials-heading {
+  display: grid;
+  grid-template-columns: 1.25fr .75fr;
+  gap: 70px;
+  align-items: end;
+  margin-bottom: 42px;
+}
+.credentials-heading h3 { margin: 12px 0 0; font-size: clamp(34px, 4vw, 58px); line-height: 1.04; letter-spacing: -.05em; }
+.credentials-heading > p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.7; }
+.credential-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.credential-card { min-height: 330px; display: flex; flex-direction: column; padding: 30px; border-right: 1px solid var(--line); transition: background .25s ease, transform .25s ease; }
+.credential-card:first-child { border-left: 1px solid var(--line); }
+.credential-card:hover { background: var(--paper-bright); transform: translateY(-5px); }
+.credential-card-top { display: flex; justify-content: space-between; color: #77817c; font-size: 10px; font-weight: 750; }
+.credential-provider { margin-top: 54px; color: #69736e; font-size: 9px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.credential-card h4 { margin: 14px 0 16px; font-size: 22px; line-height: 1.25; letter-spacing: -.035em; }
+.credential-card > p { margin: 0; color: var(--muted); font-size: 12px; }
+.credential-meta { display: grid; grid-template-columns: 1fr auto auto; gap: 14px; align-items: center; margin-top: auto; padding-top: 22px; border-top: 1px solid var(--line); color: #65706a; font-size: 10px; font-weight: 700; }
+.credential-meta svg { color: var(--ink); transition: transform .2s ease; }
+.credential-card:hover .credential-meta svg { transform: translate(3px, -3px); }
+
 .journey { padding-block: 130px; color: #f7f8f1; background: var(--ink); }
 .journey-header {
   display: grid;
@@ -551,6 +573,9 @@ h2 em {
   .hero-orbit { right: -3%; top: 18%; width: 45vw; opacity: .55; }
   .about-heading { grid-template-columns: 1fr; }
   .about-copy { width: 100%; }
+  .credentials-heading { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .credential-grid { grid-template-columns: 1fr; }
+  .credential-card { min-height: 280px; border-left: 1px solid var(--line); border-bottom: 1px solid var(--line); }
   .timeline-item { grid-template-columns: 50px .8fr 1fr 1.5fr; gap: 20px; }
   .work-visual { height: 300px; }
   .twin-layout { grid-template-columns: .8fr 1.2fr; gap: 45px; }
@@ -577,6 +602,9 @@ h2 em {
   .expertise-grid { grid-template-columns: 1fr; }
   .expertise-card { min-height: 340px; border-left: 1px solid var(--line); border-bottom: 1px solid var(--line); }
   .expertise-card h3 { margin-top: 55px; }
+  .credentials { margin-top: 75px; }
+  .credentials-heading { grid-template-columns: 1fr; gap: 20px; }
+  .credential-card { min-height: 260px; padding: 26px; }
   .journey-header { grid-template-columns: 1fr; gap: 32px; margin-bottom: 70px; }
   .timeline-item { grid-template-columns: 42px 1fr; gap: 14px; }
   .timeline-period { grid-column: 2; grid-row: 1; }

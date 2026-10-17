@@ -24,7 +24,7 @@ const openingMessage: Message = {
 const suggestions = [
   "What did he build at Blue Goji?",
   "Tell me about his Unity expertise.",
-  "Which live-service products has he worked on?",
+  "Which certifications has he completed?",
 ];
 
 function SafeIcon({ icon: Icon, ...props }: LucideProps & { icon: LucideIcon }) {
@@ -58,7 +58,7 @@ export function DigitalTwin() {
     setIsLoading(true);
 
     try {
-      const response = await fetch("/career/api/chat", {
+      const response = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ messages: nextMessages }),
@@ -104,7 +104,7 @@ export function DigitalTwin() {
             </p>
             <div className="twin-model">
               <SafeIcon icon={Sparkles} size={16} />
-              <span>Powered by OpenRouter · Grounded in my career profile</span>
+              <span>Powered by Groq · OpenRouter fallback · Grounded in my profile and resume</span>
             </div>
           </div>
 
@@ -156,7 +156,7 @@ export function DigitalTwin() {
                 <SafeIcon icon={Send} size={17} />
               </button>
             </form>
-            <p className="chat-disclaimer">AI responses are grounded in the career profile but may still make mistakes.</p>
+            <p className="chat-disclaimer">AI responses are grounded in the profile and resume but may still make mistakes.</p>
           </div>
         </div>
       </div>
