@@ -43,6 +43,39 @@ const expertise = [
   },
 ];
 
+const techStack = [
+  {
+    number: "01",
+    title: "Languages",
+    description: "Production code across gameplay, systems, tools, and browser experiences.",
+    technologies: ["C#", "C++", "TypeScript", "JavaScript", "Lua"],
+  },
+  {
+    number: "02",
+    title: "Engines & real-time",
+    description: "Interactive products spanning mobile, PC, browser, VR, and simulation.",
+    technologies: ["Unity", "Unreal Engine", "PixiJS", "Cocos2D-x", "Photon PUN", "URP", "Timeline"],
+  },
+  {
+    number: "03",
+    title: "Cloud & data",
+    description: "Connected services, dynamic content, telemetry, and live product operations.",
+    technologies: ["Unity Cloud Services", "Firebase", "Google Cloud", "REST APIs", "Remote Config", "Asset Bundles", "Couchbase", "Splunk"],
+  },
+  {
+    number: "04",
+    title: "AI & integration",
+    description: "LLM-powered runtime features with structured, production-ready outputs.",
+    technologies: ["OpenAI GPT API", "LLM Integration", "Prompt Engineering", "Structured JSON"],
+  },
+  {
+    number: "05",
+    title: "Delivery & collaboration",
+    description: "Repeatable delivery workflows and tools that keep teams moving.",
+    technologies: ["Git", "GitHub", "GitHub Actions", "Docker", "CI/CD", "Jira", "Confluence", "Cursor", "Claude"],
+  },
+];
+
 const certifications = [
   {
     title: "Autodesk AutoCAD - Beginner to Advanced level",
@@ -223,6 +256,7 @@ export default function Home() {
         <Logo />
         <nav className="desktop-nav" aria-label="Primary navigation">
           <a href="#about">About</a>
+          <a href="#tech-stack">Tech stack</a>
           <a href="#journey">Journey</a>
           <a href="#work">Selected work</a>
           <a href="#digital-twin">Digital Twin</a>
@@ -240,6 +274,7 @@ export default function Home() {
         </button>
         <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
           <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
+          <a href="#tech-stack" onClick={() => setMenuOpen(false)}>Tech stack</a>
           <a href="#journey" onClick={() => setMenuOpen(false)}>Journey</a>
           <a href="#work" onClick={() => setMenuOpen(false)}>Selected work</a>
           <a href="#digital-twin" onClick={() => setMenuOpen(false)}>Digital Twin</a>
@@ -371,9 +406,42 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="tech-stack" id="tech-stack">
+        <div className="section-shell">
+          <div className="section-label"><span>02</span> Tech stack</div>
+          <div className="tech-stack-layout">
+            <div className="tech-stack-intro">
+              <p className="eyebrow">TOOLS CHOSEN TO SHIP</p>
+              <h2>A production-minded<br /><em>technical toolkit.</em></h2>
+              <p>
+                A practical stack built through shipped games, healthcare
+                products, real-time simulations, cloud services, and modern
+                AI-assisted workflows.
+              </p>
+            </div>
+            <div className="tech-stack-grid">
+              {techStack.map((group) => (
+                <article className="tech-stack-card" key={group.title}>
+                  <div className="tech-stack-card-heading">
+                    <span>{group.number}</span>
+                    <h3>{group.title}</h3>
+                  </div>
+                  <p>{group.description}</p>
+                  <div className="tech-list">
+                    {group.technologies.map((technology) => (
+                      <span key={technology}>{technology}</span>
+                    ))}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="journey" id="journey">
         <div className="section-shell">
-          <div className="section-label light"><span>02</span> Career journey</div>
+          <div className="section-label light"><span>03</span> Career journey</div>
           <div className="journey-header">
             <h2>Built through<br /><em>every layer.</em></h2>
             <p>
@@ -405,7 +473,7 @@ export default function Home() {
       </section>
 
       <section className="work section-shell" id="work">
-        <div className="section-label"><span>03</span> Selected work</div>
+        <div className="section-label"><span>04</span> Selected work</div>
         <div className="work-header">
           <h2>Systems that shipped.<br /><em>Products that mattered.</em></h2>
           <a
@@ -463,7 +531,7 @@ export default function Home() {
       <DigitalTwin />
 
       <section className="principles section-shell">
-        <div className="section-label"><span>05</span> How I work</div>
+        <div className="section-label"><span>06</span> How I work</div>
         <div className="principle-grid">
           <div>
             <SafeIcon icon={Sparkles} size={26} strokeWidth={1.4} />
@@ -494,12 +562,21 @@ export default function Home() {
             <a className="footer-email" href="mailto:artofcom2@gmail.com">
               artofcom2@gmail.com <SafeIcon icon={ArrowUpRight} />
             </a>
+            <div className="footer-profile-links" aria-label="Professional profiles">
+              <a href="https://www.linkedin.com/in/hyungtaepark" target="_blank" rel="noreferrer">
+                linkedin.com/in/hyungtaepark <SafeIcon icon={ArrowUpRight} size={16} />
+              </a>
+              <a href="https://github.com/artofcom" target="_blank" rel="noreferrer">
+                github.com/artofcom <SafeIcon icon={ArrowUpRight} size={16} />
+              </a>
+            </div>
           </div>
           <div className="footer-bottom">
             <Logo />
             <p>Senior Software Engineer<br />Austin, Texas</p>
             <div className="social-links">
               <a className="linkedin-mark" href="https://www.linkedin.com/in/hyungtaepark" target="_blank" rel="noreferrer" aria-label="LinkedIn"><span>in</span></a>
+              <a className="github-mark" href="https://github.com/artofcom" target="_blank" rel="noreferrer" aria-label="GitHub"><span>GH</span></a>
               <a href="mailto:artofcom2@gmail.com" aria-label="Email"><SafeIcon icon={Mail} /></a>
               <a href="https://artofcom.wixsite.com/journey" target="_blank" rel="noreferrer" aria-label="Portfolio"><SafeIcon icon={ArrowUpRight} /></a>
             </div>

@@ -65,5 +65,6 @@ Education, certifications, and recognition:
 
 Public links:
 - LinkedIn: https://www.linkedin.com/in/hyungtaepark
+- GitHub: https://github.com/artofcom
 - Portfolio: https://artofcom.wixsite.com/journey
 `;

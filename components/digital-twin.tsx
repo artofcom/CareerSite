@@ -92,7 +92,7 @@ export function DigitalTwin() {
   return (
     <section className="digital-twin" id="digital-twin">
       <div className="section-shell">
-        <div className="section-label light"><span>04</span> Digital Twin</div>
+        <div className="section-label light"><span>05</span> Digital Twin</div>
         <div className="twin-layout">
           <div className="twin-intro">
             <span className="twin-badge"><i /> AI CAREER GUIDE</span>
