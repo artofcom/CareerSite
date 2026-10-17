@@ -10,13 +10,15 @@ import {
   Gamepad2,
   Mail,
   Menu,
+  Moon,
   Sparkles,
+  Sun,
   X,
   type LucideIcon,
   type LucideProps,
 } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { DigitalTwin } from "../components/digital-twin";
 
 const expertise = [
@@ -242,6 +244,23 @@ function Logo() {
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  useLayoutEffect(() => {
+    const storedTheme = localStorage.getItem("theme");
+    const theme = storedTheme === "light" || storedTheme === "dark"
+      ? storedTheme
+      : window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light";
+    document.documentElement.dataset.theme = theme;
+  }, []);
+
+  const toggleTheme = () => {
+    const root = document.documentElement;
+    const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
+    root.dataset.theme = nextTheme;
+    localStorage.setItem("theme", nextTheme);
+  };
+
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
       if (event.key === "Escape") setMenuOpen(false);
@@ -261,9 +280,21 @@ export default function Home() {
           <a href="#work">Selected work</a>
           <a href="#digital-twin">Digital Twin</a>
         </nav>
-        <a className="header-cta" href="mailto:artofcom2@gmail.com">
-          Let&apos;s talk <SafeIcon icon={ArrowUpRight} size={16} />
-        </a>
+        <div className="header-actions">
+          <button
+            className="theme-toggle"
+            type="button"
+            onClick={toggleTheme}
+            aria-label="Toggle light and dark theme"
+            title="Toggle color theme"
+          >
+            <SafeIcon className="theme-icon-moon" icon={Moon} size={17} />
+            <SafeIcon className="theme-icon-sun" icon={Sun} size={17} />
+          </button>
+          <a className="header-cta" href="mailto:artofcom2@gmail.com">
+            Let&apos;s talk <SafeIcon icon={ArrowUpRight} size={16} />
+          </a>
+        </div>
         <button
           className="menu-button"
           onClick={() => setMenuOpen((open) => !open)}
