@@ -28,6 +28,7 @@ Blue Goji - Senior Game Developer - Austin, Texas - August 2024 to July 2026
 - Developed multiplayer gameplay features for Photon Unity Networking-based mobile VR applications.
 - Implemented runtime navigation systems supporting companion AI behavior in VR environments.
 - Developed an AI-assisted coaching prototype by integrating OpenAI GPT APIs, designing prompts, parsing structured JSON responses, and presenting personalized gameplay feedback within a Unity application.
+- Automated feature development end to end, from Jira ticket intake and AI-assisted implementation with Cursor and Claude to Git branches, pull requests, and GitHub Actions workflows.
 - Led migration of legacy Unity projects to modern Unity versions, improving maintainability, enabling Unity Cloud integration, and resolving production issues involving VR interaction, AI navigation, and iOS memory optimization.
 
 Benevolence Medical - Senior Unity Engineer - Katy, Texas - August 2023 to March 2024

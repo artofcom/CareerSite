@@ -13,10 +13,11 @@ Blue Goji — Senior Game Software Engineer — Austin, Texas — August 2024 to
 - Developed and shipped multiple rehabilitation and wellness games.
 - Established reusable gameplay frameworks and shared platform systems.
 - Developed and maintained GameApp/Game SDK components including GP4 controller input abstraction, button icon handling, session and sublevel management, leaderboard integrations, and shared UI systems.
+- Built an LLM-powered Unity application on OpenAI GPT APIs, handling prompt engineering, structured JSON responses, and runtime error handling.
+- Automated feature development end to end, from Jira ticket intake and AI-assisted implementation with Cursor and Claude to Git branches, pull requests, and GitHub Actions workflows.
 - Resolved critical VR interaction issues, iOS memory-related crashes, and AI navigation challenges.
 - Developed runtime navigation for companion AI in VR environments.
 - Led Unity Cloud integrations and cloud-based content management.
-- Experimented with AI-assisted engineering workflows using Cursor, Claude, and Jira.
 
 Benevolence Medical Limited — Unity Engineer — Remote — August 2023 to March 2024
 - Designed and developed a medical education application from the ground up in Unity.
@@ -60,7 +61,7 @@ Independent work:
 
 Education, certifications, and recognition:
 - Bachelor's degree in Computer Engineering from Hansung University, 1996–2003.
-- Certifications and completed training: Software Architecture Foundations; Programming Foundations: Design Patterns; Programming Design Patterns For Unity: Write Better Code (Udemy, March 19, 2024, 3.5 hours); Unreal Engine 4 C++ The Ultimate Shooter Course (Udemy, April 3, 2024, 56 hours); Autodesk AutoCAD - Beginner to Advanced level (Udemy, September 6, 2026, 19 hours).
+- Certifications and completed training: Software Architecture Foundations; Programming Foundations: Design Patterns; Programming Design Patterns For Unity: Write Better Code (Udemy, March 19, 2024, 3.5 hours); Unreal Engine 4 C++ The Ultimate Shooter Course (Udemy, April 3, 2024, 56 hours); Autodesk AutoCAD - Beginner to Advanced level (Udemy, September 6, 2026, 19 hours); Autodesk AutoCAD 2D Drafting and Annotation The Complete Guide (Global eTraining, September 16, 2026, 40 hours, instructor Shaun Bryant); OSHA 30 Hour Outreach Training Program - Construction (360training.com, October 1, 2026, 30 hours, 3.0 CEUs, trainer Jason Cole); AI Coder: Complete Claude Code & Coding Agents Course (Udemy, October 21, 2026, 16.5 hours, taught by Ligency and Ed Donner).
 - Awards: Winner of the university subject “Experimental Project”; Smilegate Employee of the Month award.
 
 Public links:

@@ -78,7 +78,42 @@ const techStack = [
   },
 ];
 
-const certifications = [
+type Certification = {
+  title: string;
+  provider: string;
+  instructor: string;
+  instructorLabel?: string;
+  date: string;
+  duration: string;
+  credentialUrl?: string;
+  credentialId?: string;
+};
+
+const certifications: Certification[] = [
+  {
+    title: "AI Coder: Complete Claude Code & Coding Agents Course",
+    provider: "Udemy",
+    instructor: "Ligency & Ed Donner",
+    date: "October 21, 2026",
+    duration: "16.5 hours",
+    credentialUrl: "https://ude.my/UC-1571f442-983f-4efa-9a4d-e3d95b4abaa5",
+  },
+  {
+    title: "OSHA 30 Hour Outreach Training Program - Construction",
+    provider: "360training.com",
+    instructor: "Jason Cole",
+    instructorLabel: "Trainer",
+    date: "October 1, 2026",
+    duration: "30 hours · 3.0 CEUs",
+    credentialId: "43068338",
+  },
+  {
+    title: "Autodesk AutoCAD 2D Drafting and Annotation The Complete Guide",
+    provider: "Global eTraining",
+    instructor: "Shaun Bryant",
+    date: "September 16, 2026",
+    duration: "40 hours",
+  },
   {
     title: "Autodesk AutoCAD - Beginner to Advanced level",
     provider: "Udemy",
@@ -112,8 +147,8 @@ const career = [
     role: "Senior Game Software Engineer",
     location: "Austin, Texas",
     summary:
-      "Shipped rehabilitation and wellness games while establishing reusable gameplay frameworks and shared platform systems. Led Unity Cloud integrations and solved critical VR, iOS, and AI navigation challenges.",
-    focus: "Healthcare games · Platform systems · VR",
+      "Shipped rehabilitation and wellness games on reusable gameplay frameworks and shared platform systems, solving critical VR, iOS, and AI navigation challenges. Built an LLM-powered Unity application on OpenAI GPT APIs and automated feature delivery from Jira tickets to Git pull requests.",
+    focus: "Healthcare games · LLM apps · Delivery automation",
   },
   {
     period: "2023 — 2024",
@@ -407,32 +442,53 @@ export default function Home() {
             </div>
             <p>
               Verified coursework expanding practical depth across Unity
-              architecture, Unreal C++, and technical drafting.
+              architecture, Unreal C++, technical drafting, AI-assisted
+              engineering workflows, and workplace safety training.
             </p>
           </div>
           <div className="credential-grid">
-            {certifications.map((certificate, index) => (
-              <a
-                className="credential-card"
-                href={certificate.credentialUrl}
-                key={certificate.title}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <div className="credential-card-top">
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                  <SafeIcon icon={Award} size={24} strokeWidth={1.4} />
-                </div>
-                <span className="credential-provider">{certificate.provider} certificate</span>
-                <h4>{certificate.title}</h4>
-                <p>Instructor: {certificate.instructor}</p>
-                <div className="credential-meta">
-                  <span>{certificate.date}</span>
-                  <span>{certificate.duration}</span>
-                  <SafeIcon icon={ArrowUpRight} size={16} />
-                </div>
-              </a>
-            ))}
+            {certifications.map((certificate, index) => {
+              const card = (
+                <>
+                  <div className="credential-card-top">
+                    <span>{String(index + 1).padStart(2, "0")}</span>
+                    <SafeIcon icon={Award} size={24} strokeWidth={1.4} />
+                  </div>
+                  <span className="credential-provider">{certificate.provider} certificate</span>
+                  <h4>{certificate.title}</h4>
+                  <p>{certificate.instructorLabel ?? "Instructor"}: {certificate.instructor}</p>
+                  <div className="credential-meta">
+                    <span>{certificate.date}</span>
+                    <span>{certificate.duration}</span>
+                    {certificate.credentialUrl ? (
+                      <SafeIcon icon={ArrowUpRight} size={16} />
+                    ) : certificate.credentialId ? (
+                      <span>ID {certificate.credentialId}</span>
+                    ) : null}
+                  </div>
+                </>
+              );
+
+              if (!certificate.credentialUrl) {
+                return (
+                  <div className="credential-card credential-card--static" key={certificate.title}>
+                    {card}
+                  </div>
+                );
+              }
+
+              return (
+                <a
+                  className="credential-card"
+                  href={certificate.credentialUrl}
+                  key={certificate.title}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {card}
+                </a>
+              );
+            })}
           </div>
         </div>
       </section>

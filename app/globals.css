@@ -456,6 +456,8 @@ h2 em {
 .credential-card { min-height: 330px; display: flex; flex-direction: column; padding: 30px; border-right: 1px solid var(--line); transition: background .25s ease, transform .25s ease; }
 .credential-card:first-child { border-left: 1px solid var(--line); }
 .credential-card:hover { background: var(--paper-bright); transform: translateY(-5px); }
+.credential-card--static:hover { transform: none; }
+.credential-card--static { cursor: default; }
 .credential-card-top { display: flex; justify-content: space-between; color: var(--meta); font-size: 10px; font-weight: 750; }
 .credential-provider { margin-top: 54px; color: var(--meta); font-size: 9px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
 .credential-card h4 { margin: 14px 0 16px; font-size: 22px; line-height: 1.25; letter-spacing: -.035em; }
